@@ -244,7 +244,7 @@ useEffect(() => {
 	// Create a function to render if wallet is not connected yet
 	const renderNotConnectedContainer = () => (
     <div className="connect-wallet-container">
-    <img src={process.env.PUBLIC_URL+"Images/yuu.png"} alt="aping"/>
+    <img src="https://i.imgur.com/i0ytggi.gif" alt="aping"/>
 			
       <button onClick={connectWallet} className="cta-button connect-wallet-button">
         Connect Wallet
