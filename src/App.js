@@ -1,21 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import './styles/App.css';
 import twitterLogo from './assets/twitter-logo.svg';
-
-// Constants
-const TWITTER_HANDLE = 'recurshawn';
-const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
-
-const tld = '.joestar';
-const CONTRACT_ADDRESS = '0x9C9DFC9Cf343bC6648eA63B2F5eE01f406b4ddB8';
-
 import { ethers } from "ethers";
+
 
 import contractABI from './utils/contractABI.json';
 
 import polygonLogo from './assets/polygonlogo.png';
 import ethLogo from './assets/ethlogo.png';
 import { networks } from './utils/networks';
+
+// Constants
+const TWITTER_HANDLE = 'fazleedotsol';
+const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
+
+const tld = '.wagmi';
+const CONTRACT_ADDRESS = '0x9C9DFC9Cf343bC6648eA63B2F5eE01f406b4ddB8';
+
+
 
 const App = () => {
   const [currentAccount, setCurrentAccount] = useState('');
@@ -205,6 +207,13 @@ const [domain, setDomain] = useState('');
     console.log(error);
 	}
 }
+
+// This will run any time currentAccount or network are changed
+useEffect(() => {
+	if (network === 'Polygon Mumbai Testnet') {
+		fetchMints();
+	}
+}, [currentAccount, network]);
   
   const updateDomain = async () => {
 	if (!record || !domain) { return }
@@ -235,7 +244,8 @@ const [domain, setDomain] = useState('');
 	// Create a function to render if wallet is not connected yet
 	const renderNotConnectedContainer = () => (
     <div className="connect-wallet-container">
-			<img src="https://c.tenor.com/trlFyUo_GtQAAAAC/jotaro.gif" alt="Jotaro gif" />
+    <img src={process.env.PUBLIC_URL+"Images/yuu.png"} alt="aping"/>
+			
       <button onClick={connectWallet} className="cta-button connect-wallet-button">
         Connect Wallet
       </button>
@@ -266,7 +276,7 @@ const [domain, setDomain] = useState('');
 					<input
 						type="text"
 						value={record}
-						placeholder='whats ur ninja power?'
+						placeholder='whats ur flava?'
 						onChange={e => setRecord(e.target.value)}
 					/>
 						{/* If the editing variable is true, return the "Set record" and "Cancel" button */}
@@ -348,8 +358,8 @@ const editRecord = (name) => {
 				<div className="header-container">
 					<header>
             <div className="left">
-              <p className="title">⭐ Joestar Name Service</p>
-              <p className="subtitle">Your immortal API on the blockchain!</p>
+              <p className="title">⭐ APE Name Service</p>
+              <p className="subtitle">Own your wagmi name on the blockchain!</p>
               
             </div>
              <div className="right">
@@ -358,6 +368,7 @@ const editRecord = (name) => {
     </div>
 					</header>
 				</div>
+
   {!currentAccount && renderNotConnectedContainer()}
 {currentAccount && renderInputForm()}
 {mints && renderMints()}
