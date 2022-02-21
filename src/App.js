@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './styles/App.css';
 import twitterLogo from './assets/twitter-logo.svg';
+import apingLogo from './Images/aping.gif';
 import { ethers } from "ethers";
 
 
@@ -244,6 +245,7 @@ useEffect(() => {
 	// Create a function to render if wallet is not connected yet
 	const renderNotConnectedContainer = () => (
     <div className="connect-wallet-container">
+    <img alt="Aping Logo" className="flex" src={apingLogo} />
     <img src="https://i.imgur.com/i0ytggi.gif" alt="aping"/>
 			
       <button onClick={connectWallet} className="cta-button connect-wallet-button">
@@ -360,6 +362,7 @@ const editRecord = (name) => {
             <div className="left">
               <p className="title">⭐ APE Name Service</p>
               <p className="subtitle">Own your wagmi name on the blockchain!</p>
+              
               
             </div>
              <div className="right">
