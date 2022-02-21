@@ -16,7 +16,7 @@ const TWITTER_HANDLE = 'fazleedotsol';
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 const tld = '.wagmi';
-const CONTRACT_ADDRESS = '0x9C9DFC9Cf343bC6648eA63B2F5eE01f406b4ddB8';
+const CONTRACT_ADDRESS = '0xa0f762bff6016d5a9b7ea4eb5e1bf7f2bf6c619f';
 
 
 
