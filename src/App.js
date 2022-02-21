@@ -246,7 +246,7 @@ useEffect(() => {
 	const renderNotConnectedContainer = () => (
     <div className="connect-wallet-container">
     <img alt="Aping Logo" className="flex" src={apingLogo} />
-    <img src="https://i.imgur.com/i0ytggi.gif" alt="aping"/>
+  
 			
       <button onClick={connectWallet} className="cta-button connect-wallet-button">
         Connect Wallet
